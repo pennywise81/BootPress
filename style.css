@@ -1,0 +1,49 @@
+/*
+Theme Name: Twitter Bootstrap
+Text Domain: bootstrap
+*/
+
+/* IMPORT BOOTSTRAP CSS */
+@import "bootstrap-3.3.4-dist/css/bootstrap.css";
+
+/* START BOOTSTRAP OVERRIDES */
+.navbar-brand img {
+  float: left;
+  height: 20px;
+  margin-right: 10px;
+  width: 20px;
+}
+/* END BOOTSTRAP OVERRIDES */
+
+/* START STICKY FOOTER STYLES */
+@media (min-width: 992px) {
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 200px;
+  }
+  footer.main {
+    bottom: 0;
+    /* Set the fixed height of the footer here */
+    height: 200px;
+    position: absolute;
+    width: 100%;
+  }
+}
+/* END STICKY FOOTER STYLES */
+
+/* DEV SETTINGS */
+.sidebar-left {
+  /*background: red;*/
+}
+
+.content-main {
+  /*background: yellow;*/
+}
+
+.sidebar-right {
+  /*background: blue;*/
+}
