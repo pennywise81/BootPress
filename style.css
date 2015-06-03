@@ -3,9 +3,6 @@ Theme Name: Twitter Bootstrap
 Text Domain: bootstrap
 */
 
-/* IMPORT BOOTSTRAP CSS */
-@import "bootstrap-3.3.4-dist/css/bootstrap.css";
-
 /* START BOOTSTRAP OVERRIDES */
 .navbar-brand img {
   float: left;

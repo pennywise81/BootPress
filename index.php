@@ -31,8 +31,9 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
 
   <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 
+  <?php wp_head(); ?>
+
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-  <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen">
 
   <?php if (get_theme_mod('bs_responsivness') == 'fixed_width') { ?>
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/non-responsive.css" type="text/css" media="screen">
@@ -48,7 +49,6 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 
@@ -165,9 +165,6 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
   </div>
 </footer>
 <?php } ?>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 
   <?php wp_footer(); ?>
 

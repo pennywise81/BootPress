@@ -1,5 +1,8 @@
 <?php
 
+// init the theme
+include_once 'functions/init_theme.php';
+
 // Customizer add ons
 include_once 'functions/init_customizer.php';
 
