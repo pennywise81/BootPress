@@ -57,7 +57,7 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
       <header>
 
   <?php
-  if ($bs_option_show_menu === true && has_nav_menu('navigation-main')) {
+  if ($bs_option_show_menu === true) {
   ?>
   <nav class="navbar navbar-default">
     <div class="container">
@@ -70,7 +70,7 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
           <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand" href="<?php echo get_bloginfo('url'); ?>">
+        <a class="navbar-brand" href="<?php echo home_url(); ?>">
           <?php
           if (get_theme_mod('bs_brand_image') != '') {
             ?>
@@ -95,6 +95,7 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
   <?php
   wp_nav_menu(array(
     'container' => false,
+    'fallback_cb' => 'bs_default_menu',
     'menu_class' => 'nav navbar-nav',
     'menu_id' => 'navigation-main',
     'theme_location' => 'navigation-main',
