@@ -15,6 +15,24 @@ function init_scripts() {
     '3.3.4',
     true
   );
+
+  // enquire
+  wp_register_script(
+    'enquire.js',
+    get_template_directory_uri() . '/javascript/enquire.min.js',
+    array(),
+    '2.1.2',
+    true
+  );
+
+  // sticky footer functionality
+  wp_enqueue_script(
+    'sticky-footer',
+    get_template_directory_uri() . '/javascript/sticky_footer.js',
+    array('enquire.js'),
+    '1.0.0',
+    true
+  );
 }
 
 add_action('wp_enqueue_scripts', 'init_scripts');

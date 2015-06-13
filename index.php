@@ -69,7 +69,7 @@ elseif ($bs_show_sidebar_right == 1) $content_classes = 'col-md-9';
   <?php
   if ($bs_option_show_menu === true) {
   ?>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
       <div class="navbar-header">
 
@@ -161,9 +161,48 @@ elseif ($bs_show_sidebar_right == 1) $content_classes = 'col-md-9';
       <?php dynamic_sidebar('sidebar-right'); ?>
     <?php
       } else {
-        the_widget('WP_Widget_Recent_Posts');
-        the_widget('WP_Widget_Recent_Comments');
-        the_widget('WP_Widget_Meta');
+        // default widgets
+        the_widget(
+          'WP_Widget_Search',
+          array(
+            'title' => __('Search')
+          ),
+          array(
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+          )
+        );
+
+
+        the_widget(
+          'WP_Widget_Recent_Posts',
+          array(
+            'title' => __('Recent Posts'),
+            'number' => 10
+          ),
+          array(
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+          )
+        );
+
+        the_widget(
+          'WP_Widget_Recent_Comments',
+          array(
+            'title' => __('Recent Comments'),
+            'number' => 5
+          ),
+          array(
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+          )
+        );
       }
     ?>
     </aside>
@@ -172,15 +211,78 @@ elseif ($bs_show_sidebar_right == 1) $content_classes = 'col-md-9';
     </div>
   </div>
 
-<?php if (is_active_sidebar('footer-widgets')) { ?>
 <footer class="main">
   <div class="container">
     <div class="row">
-      <?php dynamic_sidebar('footer-widgets'); ?>
+<?php
+
+if (is_active_sidebar('footer-widgets')) {
+  dynamic_sidebar('footer-widgets');
+} else {
+  // default widgets
+  the_widget(
+    'WP_Widget_Text',
+    array(
+      'title' => __('Title'),
+      'text' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.Aenean massa.
+ Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
+ consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+ parturient montes, nascetur ridiculus mus. '
+    ),
+    array(
+      'before_widget' => '<div class="widget col-md-3">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>'
+    )
+  );
+
+  the_widget(
+    'WP_Widget_Pages',
+    array(
+      'title' => __('Pages'),
+      'sortby' => 'menu_order'
+    ),
+    array(
+      'before_widget' => '<div class="widget col-md-3">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>'
+    )
+  );
+
+  the_widget(
+    'WP_Widget_Meta',
+    array(
+      'title' => __('Meta')
+    ),
+    array(
+      'before_widget' => '<div class="widget col-md-3">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>'
+    )
+  );
+
+  the_widget(
+    'WP_Widget_Text',
+    array(
+      'title' => get_bloginfo('name'),
+      'text' => get_bloginfo('description')
+    ),
+    array(
+      'before_widget' => '<div class="widget col-md-3">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>'
+    )
+  );
+}
+
+?>
     </div>
   </div>
 </footer>
-<?php } ?>
 
   <?php wp_footer(); ?>
 

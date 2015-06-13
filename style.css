@@ -3,35 +3,6 @@ Theme Name: Twitter Bootstrap
 Text Domain: bootstrap
 */
 
-/* START BOOTSTRAP OVERRIDES */
-.navbar-brand img {
-  float: left;
-  height: 20px;
-  margin-right: 10px;
-  width: 20px;
-}
-/* END BOOTSTRAP OVERRIDES */
-
-/* START STICKY FOOTER STYLES */
-@media (min-width: 992px) {
-  html {
-    position: relative;
-    min-height: 100%;
-  }
-  body {
-    /* Margin bottom by footer height */
-    margin-bottom: 200px;
-  }
-  footer.main {
-    bottom: 0;
-    /* Set the fixed height of the footer here */
-    height: 200px;
-    position: absolute;
-    width: 100%;
-  }
-}
-/* END STICKY FOOTER STYLES */
-
 /* DEV SETTINGS */
 .sidebar-left {
   /*background: red;*/
@@ -44,3 +15,49 @@ Text Domain: bootstrap
 .sidebar-right {
   /*background: blue;*/
 }
+
+footer.main {
+  /*background: red;*/
+}
+
+/* START BOOTSTRAP OVERRIDES */
+.navbar-brand img {
+  float: left;
+  height: 20px;
+  margin-right: 10px;
+  width: 20px;
+}
+/* END BOOTSTRAP OVERRIDES */
+
+/* START BASIC STYLES */
+footer.main {
+  padding-bottom: 20px;
+}
+/* END BASIC STYLES */
+
+/* START STICKY FOOTER STYLES */
+@media (min-width: 992px) {
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
+    margin-bottom: 200px;
+  }
+
+  footer.main {
+    background: #000;
+    bottom: 0;
+    color: #555;
+    height: 200px;
+    position: absolute;
+    width: 100%;
+  }
+
+  footer.main a {
+    color: #555;
+    text-decoration: underline;
+  }
+}
+/* END STICKY FOOTER STYLES */
