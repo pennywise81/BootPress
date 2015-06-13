@@ -33,6 +33,11 @@ footer.main {
 footer.main {
   padding-bottom: 20px;
 }
+
+ul {
+  margin: 0 0 0 15px;
+  padding: 0;
+}
 /* END BASIC STYLES */
 
 /* START STICKY FOOTER STYLES */
