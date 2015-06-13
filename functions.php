@@ -21,4 +21,7 @@ include_once 'functions/init_main_navigation_walker.php';
 // enable thumbnails for posts
 add_theme_support('post-thumbnails');
 
+// disable admin bar
+add_filter('show_admin_bar', '__return_false');
+
 ?>

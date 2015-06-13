@@ -146,11 +146,17 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
     </div>
 
 <?php if (get_theme_mod('bs_show_sidebar_right') == 1) { ?>
-    <?php if (is_active_sidebar('sidebar-right')) { ?>
     <aside class="sidebar sidebar-right <?php echo $right_sidebar_classes; ?>">
+    <?php if (is_active_sidebar('sidebar-right')) { ?>
       <?php dynamic_sidebar('sidebar-right'); ?>
+    <?php
+      } else {
+        the_widget('WP_Widget_Recent_Posts');
+        the_widget('WP_Widget_Recent_Comments');
+        the_widget('WP_Widget_Meta');
+      }
+    ?>
     </aside>
-    <?php } ?>
 <?php } ?>
 
     </div>
