@@ -165,7 +165,7 @@ elseif ($bs_show_sidebar_right == 1) $content_classes = 'col-md-9';
         the_widget(
           'WP_Widget_Search',
           array(
-            'title' => __('Search')
+            'title' => ''
           ),
           array(
             'before_widget' => '<div class="widget">',
@@ -224,10 +224,8 @@ if (is_active_sidebar('footer-widgets')) {
     'WP_Widget_Text',
     array(
       'title' => __('Title'),
-      'text' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.Aenean massa.
- Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
- consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
- parturient montes, nascetur ridiculus mus. '
+      'text' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.' .
+        'Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
     ),
     array(
       'before_widget' => '<div class="widget col-md-3">',
