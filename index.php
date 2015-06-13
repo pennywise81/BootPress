@@ -9,14 +9,24 @@ if (!empty($post_meta['bs_option_show_menu']) && $post_meta['bs_option_show_menu
   $bs_option_show_menu = false;
 }
 
+// logo/brand image
+$bs_option_brand_image = get_theme_mod('bs_brand_image', get_template_directory_uri() . '/img/brandimage-default.png');
+
+// responsiveness
+$bs_responsivness = get_theme_mod('bs_responsivness', 'responsive');
+
+// sidebars
+$bs_show_sidebar_left = get_theme_mod('bs_show_sidebar_left', 0);
+$bs_show_sidebar_right = get_theme_mod('bs_show_sidebar_right', 1);
+
 // init content widths
 $left_sidebar_classes = 'col-md-2';
 $right_sidebar_classes = 'col-md-3';
 $content_classes = 'col-md-12';
 
-if (get_theme_mod('bs_show_sidebar_left') == 1 && get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-7';
-elseif (get_theme_mod('bs_show_sidebar_left') == 1) $content_classes = 'col-md-10';
-elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-9';
+if ($bs_show_sidebar_left == 1 && $bs_show_sidebar_right == 1) $content_classes = 'col-md-7';
+elseif ($bs_show_sidebar_left == 1) $content_classes = 'col-md-10';
+elseif ($bs_show_sidebar_right == 1) $content_classes = 'col-md-9';
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +35,7 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <?php if (get_theme_mod('bs_responsivness') == 'responsive') { ?>
+  <?php if ($bs_responsivness == 'responsive') { ?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php } ?>
 
@@ -35,7 +45,7 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
 
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-  <?php if (get_theme_mod('bs_responsivness') == 'fixed_width') { ?>
+  <?php if ($bs_responsivness == 'fixed_width') { ?>
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/non-responsive.css" type="text/css" media="screen">
   <style>
   .container {
@@ -72,9 +82,9 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
 
         <a class="navbar-brand" href="<?php echo home_url(); ?>">
           <?php
-          if (get_theme_mod('bs_brand_image') != '') {
+          if ($bs_option_brand_image != '') {
             ?>
-            <img src="<?php echo get_theme_mod('bs_brand_image'); ?>" alt="Brand">
+            <img src="<?php echo $bs_option_brand_image; ?>" alt="<?php echo get_bloginfo('name'); ?>" title="<?php echo get_bloginfo('name'); ?>">
             <?php
           }
 
@@ -86,7 +96,7 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
       </div>
 
       <div <?php
-      if (get_theme_mod('bs_responsivness') == 'responsive') {
+      if ($bs_responsivness == 'responsive') {
         ?> class="collapse navbar-collapse" id="menu-collapsible"<?php
       }
       else {
@@ -115,7 +125,7 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
   <div class="container">
     <div class="row">
 
-<?php if (get_theme_mod('bs_show_sidebar_left') == 1) { ?>
+<?php if ($bs_show_sidebar_left == 1) { ?>
     <?php if (is_active_sidebar('sidebar-left')) { ?>
     <aside class="sidebar sidebar-left <?php echo $left_sidebar_classes; ?>">
       <?php dynamic_sidebar('sidebar-left'); ?>
@@ -145,7 +155,7 @@ elseif (get_theme_mod('bs_show_sidebar_right') == 1) $content_classes = 'col-md-
       ?>
     </div>
 
-<?php if (get_theme_mod('bs_show_sidebar_right') == 1) { ?>
+<?php if ($bs_show_sidebar_right == 1) { ?>
     <aside class="sidebar sidebar-right <?php echo $right_sidebar_classes; ?>">
     <?php if (is_active_sidebar('sidebar-right')) { ?>
       <?php dynamic_sidebar('sidebar-right'); ?>
