@@ -17,7 +17,7 @@ get_sidebar('left');
 ?>
 
 <div class="content content-main <?php echo $content_classes; ?>">
-  <?php get_template_part('loop', 'title_meta_content'); ?>
+  <?php get_template_part('loop'); ?>
 </div>
 
 <?php get_sidebar('right'); ?>

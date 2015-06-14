@@ -28,6 +28,7 @@ $bs_responsivness = get_theme_mod('bs_responsivness', 'responsive');
 
   <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 
+  <?php wp_enqueue_script('comment-reply'); ?>
   <?php wp_head(); ?>
 
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">

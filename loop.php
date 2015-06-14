@@ -6,13 +6,9 @@ if (have_posts()) {
 
     the_title('<h1>', '</h1>');
 
-    echo '<div class="meta">';
-    get_template_part('tpl.datetime');
-    echo '<br>';
-    get_template_part('tpl.author', 'written_by');
-    echo '</div>';
-
     the_content();
+
+    comments_template();
   }
 }
 else {
