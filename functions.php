@@ -18,6 +18,11 @@ include_once 'functions/init_menus.php';
 // Walker for navigation-main
 include_once 'functions/init_main_navigation_walker.php';
 
+// Walker for comments
+include_once 'functions/init_comments_walker.php';
+
+include_once 'functions/init_comment_reply_link.php';
+
 // enable thumbnails for posts
 add_theme_support('post-thumbnails');
 
