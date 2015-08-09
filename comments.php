@@ -11,8 +11,8 @@ if (!empty($post->post_password)) {
 }
 
 if ($comments) {
-  echo '<div class="comments" id="comments-container">';
   echo '<h3>Kommentare</h3>';
+  echo '<div class="col-xs-12 comments" id="comments-container">';
 
   wp_list_comments(array('walker' => new comments_walker));
 

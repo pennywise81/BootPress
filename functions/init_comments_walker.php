@@ -21,7 +21,7 @@ class comments_walker extends Walker_Comment {
     $GLOBALS['comment_depth'] = $depth;
     $GLOBALS['comment'] = $comment;
 
-    $comment_classes = array('comment', 'comment-level-' . $depth);
+    $comment_classes = array('row', 'comment', 'comment-level-' . $depth);
 
     if ($this->comments_count++%2==0) {
       $comment_classes[] = 'even';
@@ -37,9 +37,11 @@ class comments_walker extends Walker_Comment {
     echo "\n";
     echo '<div class="' . implode(' ', $comment_classes) . '" id="comment-' . get_comment_ID() . '">';
 
+    echo '<div class="col-xs-4 col-sm-3 text-center comment-user-data">';
+
     if ($args['avatar_size'] != 0) {
       echo '<div class="comment-avatar">';
-      echo get_avatar($comment, $args['avatar_size']);
+      echo get_avatar($comment, 100);
       echo '</div> <!-- end .comment-avatar -->';
     }
 
@@ -50,6 +52,10 @@ class comments_walker extends Walker_Comment {
     // comment is awaiting moderation
     if(!$comment->comment_approved) {}
 
+    echo '</div> <!-- end .comment-user-data -->';
+
+    echo '<div class="col-xs-8 col-sm-9 comment-content">';
+
     echo '<div class="comment-date">';
     comment_date('d.m.Y H:i');
     echo '</div> <!-- end .comment-date -->';
@@ -58,8 +64,10 @@ class comments_walker extends Walker_Comment {
     comment_text();
     echo '</div> <!-- end .comment-text -->';
 
+    echo '</div> <!-- end .comment-content -->';
+
     $reply_args = array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']);
-    echo '<div class="comment-reply-link">';
+    echo '<div class="col-xs-12 comment-reply-link">';
     echo get_comment_reply_link(array_merge($args, $reply_args));
     echo '</div> <!-- end .comment-reply-link -->';
 

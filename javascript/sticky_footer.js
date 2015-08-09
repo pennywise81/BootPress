@@ -12,12 +12,16 @@
 
     maxHeight += parseInt(getComputedStyle(document.querySelector('footer.main'))['padding-bottom'], 10);
 
-    document.querySelector('body').style.marginBottom = maxHeight + 'px';
+    // document.querySelector('body').style.marginBottom = maxHeight + 'px';
+    // TODO: schöner machen
+    document.querySelector('body').style.marginBottom = (maxHeight + 10) + 'px';
     document.querySelector('footer.main').style.height = maxHeight + 'px';
   }
 
   var resetFooter = function() {
-    document.querySelector('body').style.marginBottom = 0;
+    // document.querySelector('body').style.marginBottom = 0;
+    // TODO: schöner machen
+    document.querySelector('body').style.marginBottom = '10px';
     document.querySelector('footer.main').style.height = 'auto';
   }
 
