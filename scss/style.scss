@@ -3,6 +3,7 @@ Theme Name: Twitter Bootstrap
 Text Domain: bootstrap
 */
 
+@import 'partials/bootstrap';
 @import 'partials/bootstrap-overrides';
 @import 'partials/sticky-footer';
 @import 'partials/comments';

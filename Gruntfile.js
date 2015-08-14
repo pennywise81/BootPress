@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     uglify: {
-      my_target: {
+      stickyfooter: {
         options: {
           sourceMap: true,
           sourceMapName: 'js/min/sticky_footer.min.js.map'
