@@ -1,0 +1,15 @@
+#customize-controls #customize-control-bs_brand_image .container {
+  min-height: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+#customize-controls #customize-control-bs_brand_image .container .placeholder {
+  min-height: 40px;
+}
+
+#customize-controls #customize-control-bs_brand_image img {
+  height: 20px;
+  max-width: none;
+  width: auto;
+}

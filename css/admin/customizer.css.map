@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gEAAiE,CAC/D,UAAU,CAAE,CAAC,CACb,OAAO,CAAE,IAAI,CACb,UAAU,CAAE,MAAM,CAGpB,6EAA8E,CAC5E,UAAU,CAAE,IAAI,CAGlB,yDAA0D,CACxD,MAAM,CAAE,IAAI,CACZ,SAAS,CAAE,IAAI,CACf,KAAK,CAAE,IAAI",
+"sources": ["../../scss/admin/customizer.scss"],
+"names": [],
+"file": "customizer.css"
+}

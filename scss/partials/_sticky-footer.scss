@@ -1,0 +1,24 @@
+@media (min-width: 992px) {
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
+    margin-bottom: 200px;
+  }
+
+  footer.main {
+    background: #000;
+    bottom: 0;
+    color: #555;
+    height: 200px;
+    position: absolute;
+    width: 100%;
+  }
+
+  footer.main a {
+    color: #555;
+    text-decoration: underline;
+  }
+}
