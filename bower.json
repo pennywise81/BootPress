@@ -1,0 +1,14 @@
+{
+  "name": "Wordpress-Twitter-Bootstrap-Theme",
+  "homepage": "https://github.com/pennywise81/Wordpress-Twitter-Bootstrap-Theme",
+  "authors": [
+    "Lars Schweisthal"
+  ],
+  "private": true,
+  "description": "A theme for wordpress CMS using Twitter Bootstrap",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "vendor/"
+  ]
+}
