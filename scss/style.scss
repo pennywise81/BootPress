@@ -3,6 +3,8 @@ Theme Name: Twitter Bootstrap
 Text Domain: bootstrap
 */
 
+$icon-font-path: 'vendor/bootstrap-sass/assets/fonts/bootstrap/';
+
 @import 'partials/bootstrap';
 @import 'partials/bootstrap-overrides';
 @import 'partials/sticky-footer';
