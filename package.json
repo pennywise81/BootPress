@@ -1,0 +1,22 @@
+{
+  "name": "Wordpress-Twitter-Bootstrap-Theme",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.php",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/pennywise81/Wordpress-Twitter-Bootstrap-Theme.git"
+  },
+  "author": "Lars Schweisthal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pennywise81/Wordpress-Twitter-Bootstrap-Theme/issues"
+  },
+  "homepage": "https://github.com/pennywise81/Wordpress-Twitter-Bootstrap-Theme",
+  "devDependencies": {
+    "grunt-contrib-uglify": "^0.9.1"
+  }
+}
