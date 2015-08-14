@@ -34,7 +34,7 @@ function init_scripts() {
   // sticky footer functionality
   wp_enqueue_script(
     'sticky-footer',
-    get_template_directory_uri() . '/javascript/sticky_footer.js',
+    get_template_directory_uri() . '/js/sticky_footer.js',
     array('enquire.js'),
     '1.0.0',
     true
