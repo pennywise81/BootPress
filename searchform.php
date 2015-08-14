@@ -6,7 +6,7 @@
       <span class="input-group-btn">
         <button type="submit" class="btn btn-primary" name="submit" id="searchsubmit">
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          <?php esc_attr_e('Search'); ?>
+          <span class="hidden-xs hidden-md"><?php esc_attr_e('Search'); ?></span>
         </button>
       </span>
     </div>
