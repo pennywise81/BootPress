@@ -1,5 +1,5 @@
 var distpath = 'bootstrap-release';
-var version = '0.1.0 (2015-08-20)';
+var version = '0.2.0 (2015-08-20)';
 
 module.exports = function(grunt) {
 
@@ -100,11 +100,6 @@ module.exports = function(grunt) {
               ""
             );
 
-            // content = content.replace(
-            //   "{{VERSION}}",
-            //   version
-            // );
-
             content = content.replace(
               /vendor\/bootstrap-sass\/assets\/fonts\/bootstrap\//gi,
               "fonts/"
@@ -147,6 +142,22 @@ module.exports = function(grunt) {
       },
     },
 
+    'string-replace': {
+      versionize: {
+        files: [{
+          expand: true,
+          src: ['README.md', 'scss/style.scss'],
+          filter: 'isFile'
+        }],
+        options: {
+          replacements: [{
+            pattern: /Version: .*/ig,
+            replacement: 'Version: ' + version
+          }]
+        }
+      }
+    },
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -154,6 +165,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-string-replace');
 
-  grunt.registerTask('build', ['clean', 'copy']);
+  grunt.registerTask('build', ['string-replace:versionize', 'sass', 'clean', 'copy']);
 };
