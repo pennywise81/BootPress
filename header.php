@@ -28,13 +28,19 @@ $bs_responsivness = get_theme_mod('bs_responsivness', 'responsive');
 
   <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 
+  <style>
+  <?php include_once 'css/abovethefold.css'; ?>
+  </style>
+
   <?php wp_enqueue_script('comment-reply'); ?>
+
   <?php wp_head(); ?>
 
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
   <?php if ($bs_responsivness == 'fixed_width') { ?>
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/non-responsive.css" type="text/css" media="screen">
+
   <style>
   .container {
     width: 980px !important;

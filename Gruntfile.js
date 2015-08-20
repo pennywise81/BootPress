@@ -1,5 +1,5 @@
 var distpath = 'bootstrap-release';
-var version = '0.2.1 (2015-08-20)';
+var version = '0.2.2 (2015-08-20)';
 
 module.exports = function(grunt) {
 
@@ -16,6 +16,15 @@ module.exports = function(grunt) {
         files: {
           'js/min/sticky_footer.min.js': ['js/sticky_footer.js']
         }
+      },
+      defercss: {
+        options: {
+          sourceMap: true,
+          sourceMapName: 'js/min/defer-css.min.js.map'
+        },
+        files: {
+          'js/min/defer-css.min.js': ['js/defer-css.js']
+        }
       }
     },
 
@@ -27,6 +36,7 @@ module.exports = function(grunt) {
         files: {
           'css/non-responsive.css': 'scss/non-responsive.scss',
           'css/admin/customizer.css': 'scss/admin/customizer.scss',
+          'css/abovethefold.css': 'scss/abovethefold.scss',
           'style.css': 'scss/style.scss'
         }
       }
@@ -73,7 +83,7 @@ module.exports = function(grunt) {
             );
 
             content = content.replace(
-              "/js/min",
+              /\/js\/min/gi,
               "/js"
             );
 
@@ -122,6 +132,7 @@ module.exports = function(grunt) {
           expand: true,
           src: [
             'js/min/sticky_footer.min.js',
+            'js/min/defer-css.min.js',
             'vendor/jquery/dist/jquery.min.js',
             'vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js',
             'vendor/enquire/dist/enquire.min.js',

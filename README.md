@@ -1,9 +1,10 @@
 # [BootPress](http://bootpress.larsschweisthal.de)
 
-## Version: 0.2.1 (2015-08-20)
+## Version: 0.2.2 (2015-08-20)
 WordPress Theme based on Twitter Bootstrap.
 
 ### Changelog
+- [x] split "above the fold" and other CSS
 - [x] removed WordPress's Emoji functions
 - [x] working versioning system
 - [x] release and development version
@@ -14,7 +15,7 @@ WordPress Theme based on Twitter Bootstrap.
 - [ ] multilanguage support
 
 ### Upcoming minors
-- [ ] split "above the fold" and other CSS
+- [ ] improve "above the fold" CSS
 - [ ] disable/enable footer
 - [ ] implement responsive images
 - [ ] general performance tweaks
