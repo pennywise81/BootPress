@@ -1,6 +1,10 @@
+var distpath = 'bootstrap-release';
+var version = '0.1.0 (2015-08-20)';
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
 
     uglify: {
@@ -33,11 +37,123 @@ module.exports = function(grunt) {
         files: ['**/*.scss'],
         tasks: ['sass']
       }
-    }
+    },
+
+    clean: {
+      options: {
+        force: true
+      },
+      builddir: ['../' + distpath + '/**/*']
+    },
+
+    copy: {
+      php: {
+        files: [{
+          expand: true,
+          src: ['**/*.php'],
+          dest: '../' + distpath + '/',
+          filter: 'isFile'
+        }],
+        // replacing paths to js files in init_theme.php
+        options: {
+          process: function (content, srcpath) {
+            content = content.replace(
+              "/vendor/jquery/dist",
+              "/js"
+            );
+
+            content = content.replace(
+              "/vendor/bootstrap-sass/assets/javascripts",
+              "/js"
+            );
+
+            content = content.replace(
+              "/vendor/enquire/dist",
+              "/js"
+            );
+
+            content = content.replace(
+              "/js/min",
+              "/js"
+            );
+
+            return content;
+          },
+        },
+      },
+      css: {
+        files: [{
+          expand: true,
+          src: ['style.css', 'css/*.css'],
+          dest: '../' + distpath + '/',
+          filter: 'isFile'
+        }],
+        options: {
+          process: function (content, srcpath) {
+            content = content.replace(
+              "BootPress Development Version",
+              "BootPress"
+            );
+
+            content = content.replace(
+              " <strong>This is the development version.</strong>",
+              ""
+            );
+
+            // content = content.replace(
+            //   "{{VERSION}}",
+            //   version
+            // );
+
+            content = content.replace(
+              /vendor\/bootstrap-sass\/assets\/fonts\/bootstrap\//gi,
+              "fonts/"
+            );
+
+            return content;
+          },
+        },
+      },
+      images: {
+        files: [{
+          expand: true,
+          src: ['screenshot.png', 'img/**'],
+          dest: '../' + distpath + '/',
+          filter: 'isFile'
+        }]
+      },
+      javascript: {
+        files: [{
+          expand: true,
+          src: [
+            'js/min/sticky_footer.min.js',
+            'vendor/jquery/dist/jquery.min.js',
+            'vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js',
+            'vendor/enquire/dist/enquire.min.js',
+          ],
+          dest: '../' + distpath + '/js/',
+          filter: 'isFile',
+          flatten: true
+        }]
+      },
+      fonts: {
+        files: [{
+          expand: true,
+          src: ['vendor/bootstrap-sass/assets/fonts/bootstrap/*.*'],
+          dest: '../' + distpath + '/fonts/',
+          filter: 'isFile',
+          flatten: true
+        }]
+      },
+    },
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+
+  grunt.registerTask('build', ['clean', 'copy']);
 };
