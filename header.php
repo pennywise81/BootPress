@@ -10,7 +10,10 @@ if (!empty($post_meta['bs_option_show_menu']) && $post_meta['bs_option_show_menu
 }
 
 // logo/brand image
-$bs_option_brand_image = get_theme_mod('bs_brand_image', get_template_directory_uri() . '/img/brandimage-default.png');
+$bs_option_brand_image = get_theme_mod('bs_brand_image', '');
+if ($bs_option_brand_image == '') {
+  $bs_option_brand_image = 'data:image/png;base64,' . base64_encode(file_get_contents(get_template_directory() . '/img/brandimage-default.png'));
+}
 
 // responsive settings
 $bs_responsivness = get_theme_mod('bs_responsivness', 'responsive');
