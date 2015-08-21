@@ -1,5 +1,5 @@
 var distpath = 'bootstrap-release';
-var version = '0.2.2 (2015-08-20)';
+var version = '0.2.1 (2015-08-21)';
 
 module.exports = function(grunt) {
 
@@ -46,6 +46,10 @@ module.exports = function(grunt) {
       css: {
         files: ['**/*.scss'],
         tasks: ['sass']
+      },
+      js: {
+        files: ['js/*.js'],
+        tasks: ['uglify']
       }
     },
 

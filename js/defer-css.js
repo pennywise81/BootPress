@@ -8,5 +8,8 @@
   link.rel = "stylesheet";
   link.media = "screen,print";
 
-  document.getElementsByTagName("head")[0].appendChild(link);
+  // document.getElementsByTagName("head")[0].appendChild(link);
+  document.getElementsByTagName("head")[0].
+    insertBefore(link, document.getElementsByTagName("head")[0].childNodes[0]);
+
 })();

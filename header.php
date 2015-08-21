@@ -36,8 +36,6 @@ $bs_responsivness = get_theme_mod('bs_responsivness', 'responsive');
 
   <?php wp_head(); ?>
 
-  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
   <?php if ($bs_responsivness == 'fixed_width') { ?>
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/non-responsive.css" type="text/css" media="screen">
 
