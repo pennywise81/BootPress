@@ -1,9 +1,10 @@
 # [BootPress](http://bootpress.larsschweisthal.de)
 
-## Version: 0.2.3 (2015-08-21)
+## Version: 0.2.4 (2015-08-23)
 WordPress Theme based on Twitter Bootstrap.
 
 ### Changelog
+- [x] changed paths in SCSS due to compile error
 - [x] base64 encoded the brand image default
 - [x] performance enhancements
 - [x] split "above the fold" and other CSS
