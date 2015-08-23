@@ -2,14 +2,15 @@
 
 function init_scripts() {
   // Basic Stylesheet
-  // wp_register_style(
-  //   'basic-style',
-  //   get_template_directory_uri() . '/style.css',
-  //   array(),
-  //   '1.0.0',
-  //   'screen'
-  // );
-  // wp_enqueue_style('basic-style');
+  // comment this out if you want to run above the fold css
+  wp_register_style(
+    'basic-style',
+    get_template_directory_uri() . '/style.css',
+    array(),
+    '1.0.0',
+    'screen'
+  );
+  wp_enqueue_style('basic-style');
 
   // jQuery
   wp_deregister_script('jquery');

@@ -1,3 +1,4 @@
+/*
 (function() {
   "use strict";
 
@@ -13,3 +14,4 @@
     insertBefore(link, document.getElementsByTagName("head")[0].childNodes[0]);
 
 })();
+*/
