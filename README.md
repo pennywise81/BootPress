@@ -3,6 +3,19 @@
 ## Version: 0.2.4 (2015-08-23)
 WordPress Theme based on Twitter Bootstrap.
 
+### Installation
+- Install [Wordpress](https://de.wordpress.org/)
+- Clone or fetch into `wp-content/themes`
+  ```
+  git clone git@github.com:pennywise81/BootPress.git bootpress-dev
+  ```
+
+You're good to go. If you want to run Grunt tasks, you have to install [npm](https://nodejs.org/), [grunt](http://gruntjs.com/getting-started), [bower](http://bower.io/#install-bower), [ruby](http://rubyinstaller.org/) and [SASS](http://sass-lang.com/install). After installation, run the following commands in `bootpress-dev`:
+
+- `npm install`
+- `bower install`
+- `grunt build` (e.g., for a list of all tasks check `Gruntfile.js`)
+
 ### Changelog
 - [x] changed paths in SCSS due to compile error
 - [x] base64 encoded the brand image default
