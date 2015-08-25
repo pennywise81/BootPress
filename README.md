@@ -1,6 +1,6 @@
 # [BootPress](http://bootpress.larsschweisthal.de)
 
-## Version: 0.2.5 (2015-08-23)
+## Version: 0.2.6 (2015-08-25)
 WordPress Theme based on Twitter Bootstrap.
 
 ### Installation

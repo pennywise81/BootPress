@@ -1,5 +1,5 @@
-var distpath = 'bootstrap-release';
-var version = '0.2.5 (2015-08-23)';
+var distpath = 'bootpress-release';
+var version = '0.2.6 (2015-08-25)';
 
 module.exports = function(grunt) {
 
@@ -182,5 +182,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-string-replace');
 
-  grunt.registerTask('build', ['string-replace:versionize', 'sass', 'clean', 'copy']);
+  grunt.registerTask('build', ['clean', 'copy']);
 };
