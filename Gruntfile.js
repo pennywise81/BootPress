@@ -1,5 +1,5 @@
 var distpath = 'bootpress-release';
-var version = '0.2.6 (2015-08-25)';
+var version = '0.2.7 (2015-08-25)';
 
 module.exports = function(grunt) {
 

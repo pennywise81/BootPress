@@ -68,12 +68,7 @@ $bs_responsivness = get_theme_mod('bs_responsivness', 'responsive');
     <div class="container">
       <div class="navbar-header">
 
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-collapsible">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+        <?php get_template_part('tpl.navbartoggle'); ?>
 
         <a class="navbar-brand" href="<?php echo home_url(); ?>">
           <?php

@@ -1,6 +1,6 @@
 # [BootPress](http://bootpress.larsschweisthal.de)
 
-## Version: 0.2.6 (2015-08-25)
+## Version: 0.2.7 (2015-08-25)
 WordPress Theme based on Twitter Bootstrap.
 
 ### Installation
@@ -17,6 +17,7 @@ You're good to go. If you want to run Grunt tasks, you have to install [npm](htt
 - `grunt build` (e.g., for a list of all tasks check `Gruntfile.js`)
 
 ### Changelog
+- [x] implemented template-part for navigation toggle
 - [x] removed above the fold for now, needs more attention
 - [x] changed paths in SCSS due to compile error
 - [x] base64 encoded the brand image default
