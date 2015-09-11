@@ -19,7 +19,7 @@ class navigation_main_walker extends Walker_Nav_Menu {
   function start_el(&$output, $item, $depth, $args, $id = 0) {
     $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
-    $classes = array();
+    $classes = $item->classes;
     if ($args->has_children) $classes[] = 'dropdown';
     if (in_array('current_page_item', (array) $item->classes)) $classes[] = 'active';
     $class_tag = count($classes) > 0 ? ' class="' . implode(' ', $classes) . '"' : '';
