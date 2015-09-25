@@ -1,15 +1,6 @@
 <?php
 
-// sidebars
-$bs_show_sidebar_left = get_theme_mod('bs_show_sidebar_left', 0);
-$bs_show_sidebar_right = get_theme_mod('bs_show_sidebar_right', 1);
-
-// init content widths
-$content_classes = 'col-md-12';
-
-if ($bs_show_sidebar_left == 1 && $bs_show_sidebar_right == 1) $content_classes = 'col-md-7';
-elseif ($bs_show_sidebar_left == 1) $content_classes = 'col-md-10';
-elseif ($bs_show_sidebar_right == 1) $content_classes = 'col-md-9';
+include 'thememod.php';
 
 get_header();
 get_sidebar('left');

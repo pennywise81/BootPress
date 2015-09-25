@@ -1,7 +1,6 @@
 <?php
 
-$right_sidebar_classes = 'col-md-3';
-$bs_show_sidebar_right = get_theme_mod('bs_show_sidebar_right', 1);
+include 'thememod.php';
 
 ?>
 

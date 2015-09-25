@@ -1,22 +1,6 @@
 <?php
 
-// get post meta
-$post_meta = get_post_meta(get_the_ID());
-
-// show menu option
-$bs_option_show_menu = true;
-if (!empty($post_meta['bs_option_show_menu']) && $post_meta['bs_option_show_menu'][0] == 'no') {
-  $bs_option_show_menu = false;
-}
-
-// logo/brand image
-$bs_option_brand_image = get_theme_mod('bs_brand_image', '');
-if ($bs_option_brand_image == '') {
-  $bs_option_brand_image = 'data:image/png;base64,' . base64_encode(file_get_contents(get_template_directory() . '/img/brandimage-default.png'));
-}
-
-// responsive settings
-$bs_responsivness = get_theme_mod('bs_responsivness', 'responsive');
+include 'thememod.php';
 
 ?>
 <!DOCTYPE html>
@@ -62,6 +46,8 @@ $bs_responsivness = get_theme_mod('bs_responsivness', 'responsive');
       <header>
 
 <?php
+
+get_template_part('tpl.beforenavbar');
 
 if ($bs_option_show_menu === true) {
   get_template_part('tpl.navbar');
