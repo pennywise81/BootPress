@@ -58,5 +58,5 @@ if ($bs_option_show_menu === true) {
     </div>
   </div>
 
-  <div class="container">
+  <div class="container main">
     <div class="row">
