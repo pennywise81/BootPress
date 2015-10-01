@@ -8,6 +8,7 @@ get_sidebar('left');
 ?>
 
 <div class="content content-main <?php echo $content_classes; ?>">
+  <?php get_template_part('tpl.beforeloop'); ?>
   <?php get_template_part('loop'); ?>
 </div>
 
